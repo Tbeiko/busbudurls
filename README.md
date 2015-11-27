@@ -4,9 +4,11 @@
 
 ### TODO
 1. Make it look somewhat decent
+  - add bootstrap
+  - style it
 1. Add option to not require `"http://"` in form
 1. Add option for custom slug
 1. Add actual domain 
-  - `heroku config:set BASE_URL="shrtd.mn"`
+  - `heroku config:set BASE_URL="shortdoma.in"`
 1. Show list of currently used slugs
 
