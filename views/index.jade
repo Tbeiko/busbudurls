@@ -1,13 +1,8 @@
-doctype html 
-html(lang="en")
-    head 
-        title="Busbud URL Shortener"
-    body 
-        div.container
-            div.row
-                h1. Busbud URL Shortener
-
-            div.row 
-              form(action='/', method="POST")
-                  input(type="url", name="url")
-                  input(type="submit", value="submit")
+extend layout
+block content
+      div
+        h3 Enter the URL you would like to shorten
+        p Be sure to add 'http://'
+        form(action='/', method="POST")
+            input(type="url", name="url")
+            input(type="submit", value="submit")

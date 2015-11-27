@@ -80,7 +80,7 @@ app.route('/:id').all(function (req, res) {
 });
 
 // Serve static files
-app.use(express.static(__dirname + '/static'));
+app.use(express.static(__dirname + '/public'));
 
 // Listen
 app.listen(port);
