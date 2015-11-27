@@ -3,7 +3,7 @@ block content
     div.container
         h3
             | Your shortened URL is: 
-            a(href=base_url+'/'+id) #{base_url}/#{id}
+            a(href='http://'+base_url+'/'+id) #{base_url}/#{id}
         h5
             | The original one was: 
             a(href=url) #{url}
