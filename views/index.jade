@@ -2,7 +2,10 @@ extend layout
 block content
       div
         h3 Enter the URL you would like to shorten
-        p Be sure to add 'http://'
-        form(action='/', method="POST")
-            input(type="url", name="url")
-            input(type="submit", value="submit")
+        div
+            p.help-block Be sure to add 'http://'
+        form.form-inline(action='/', method="POST")
+            div.form-group
+                input.linkbox(type="url", name="url", placeholder="http://yourawesomelink.com")
+            div.form-group   
+                input.btn.btn-primary.shorten-btn(type="submit", value="Submit")

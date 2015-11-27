@@ -1,0 +1,15 @@
+.container {
+  margin-right: 5%;
+}
+
+.linkbox {
+  width: 400px;
+  height: 40px;
+  font-size: 25px;
+}
+
+.shorten-btn {
+  margin-left: 25px;
+  height: 40px;
+  font-size: 18px;
+}

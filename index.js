@@ -55,7 +55,7 @@ app.post('/', function (req, res) {
     // Store them in Redis 
     client.set(id, url, function () {
         // Display the response 
-        res.render('output', {id: id, base_url: base_url});
+        res.render('output', {id: id, base_url: base_url, url: url});
     });
 });
 
