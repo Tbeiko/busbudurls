@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    head 
+        title="Busbud URL Shortener"
+
+    body
+        div.container
+          div.row
+            h1 Busbud URL Shortener
+            p
+                | Your shortened URL is
+                a(href=base_url+'/'+id) #{base_url}/#{id}
+                

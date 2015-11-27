@@ -1,0 +1,33 @@
+{
+  "name": "busbudurls",
+  "version": "1.0.0",
+  "description": "A URL shortener for Busbud",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "url",
+    "busbud",
+    "shortener"
+  ],
+  "author": "Tim Beiko (inspired by tutorial at http://matthewdaly.co.uk/blog/2014/11/09/building-a-url-shortener-with-node-dot-js-and-redis)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "hiredis": "^0.4.1",
+    "jade": "^1.11.0",
+    "redis": "^2.3.1",
+    "shortid": "^2.2.4"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-mocha-istanbul": "^3.0.1",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.4",
+    "request": "^2.67.0"
+  }
+}
