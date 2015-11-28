@@ -10,7 +10,7 @@ app = express();
 port = process.env.PORT || 5000;
 shortid = require('shortid');
 bodyParser = require('body-parser');
-base_url = process.env.BASE_URL || 'http://localhost:5000';
+base_url = process.env.BASE_URL || 'localhost:5000';
 
 // Set up connection to Redis
 /* istanbul ignore if */
@@ -48,6 +48,10 @@ app.post('/', function (req, res) {
 
     // Get URL
     url = req.body.url;
+
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
 
     // Create a hashed short version 
     id = shortid.generate();
