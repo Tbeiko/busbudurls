@@ -2,8 +2,6 @@ extend layout
 block content
       div
         h3 Enter the URL you would like to shorten
-        div
-            p.help-block Be sure to add 'http://'
         form.form-inline(action='/', method="POST")
             div.form-group
                 input.linkbox(type="text", name="url", placeholder="http://yourawesomelink.com")
