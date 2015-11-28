@@ -5,6 +5,7 @@
 ### TODO
 1. Make it look somewhat decent
   - ~~add bootstrap~~
+  - mobile responsive
   - style it 
 1. ~~Add custom (short) domain~~
   - ~~`heroku config:set BASE_URL="shortdoma.in"`~~
@@ -15,4 +16,4 @@
 1. Show list of currently used slugs
 1. Validate for bad links 
   - test is passing on localhost, but need to validate with real URLs
-
+1. Require log in?
