@@ -1,15 +1,39 @@
+h1, h2, h3, h4, h5, p  {
+  font-family: 'Helvetica', sans-serif;
+}
+
+.main-header {
+  font-weight: bold;
+  color: white;
+  height: 75px;
+  line-height: 75px;
+  vertical-align: middle;
+}
+
 .container {
   margin-right: 5%;
 }
 
+.main {
+  background-color: #127ccb;
+}
+
+.form-group {
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
 .linkbox {
   width: 400px;
+  display: inline-block;
   height: 40px;
   font-size: 25px;
-  margin-right: 25px;
 }
 
 .shorten-btn {
   height: 40px;
   font-size: 18px;
+  background-color: #127ccb;
 }

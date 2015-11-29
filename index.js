@@ -44,7 +44,7 @@ app.get('/', function (req, res) {
 // Define submit route
 app.post('/', function (req, res) {
     // Declare the variables
-    var url, id, slug, callback;
+    var url, id, slug, callback, errorMessage;
 
     // Get URL and Slug
     url = req.body.url;
@@ -66,7 +66,8 @@ app.post('/', function (req, res) {
                     // And then we set it, and render the output page
                     client.set(id, url, function (err, reply) {
                         console.log("Slug already taken. Successfully created with shortid");
-                        res.render('output', {id: id, base_url: base_url, url: url});
+                        errorMessage = "Oops, a custom URL with that slug already exists. We generated a random one for you instead!"
+                        res.render('output', {id: id, base_url: base_url, url: url, errorMessage: errorMessage});
                     });
                 } else {
                     // If the callback is null, then we can use the slug as id
@@ -83,7 +84,7 @@ app.post('/', function (req, res) {
         client.set(id, url, function (err, reply) {
             // Display the response 
             console.log("Successfully created with shortid.");
-            res.render('output', {id: id, base_url: base_url, url: url, error: error});
+            res.render('output', {id: id, base_url: base_url, url: url});
         });
     };
 });

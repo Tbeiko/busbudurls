@@ -3,10 +3,10 @@ block content
       div
         h3 Enter the URL you would like to shorten
         p.help-block If you enter a custom URL and it gives you a random one, it means your custom URL was already taken. Try another one!
-        form.form-inline(action='/', method="POST")
+        form.form-inline.row(action='/', method="POST")
             div.form-group
-                input.linkbox(type="text", name="url", placeholder=" http://yourawesomelink.com")
+                input.linkbox.col-sm-4(type="text", name="url", placeholder=" http://yourawesomelink.com")
             div.form-group
-                input.linkbox(type="text", name="slug", placeholder=" Custom URL e.g. /fun ")
-            div.form-group   
+                input.linkbox.col-sm-4(type="text", name="slug", placeholder=" Custom URL (ex: /fun) ")
+            div.form-group
                 input.btn.btn-primary.shorten-btn(type="submit", value="Submit")

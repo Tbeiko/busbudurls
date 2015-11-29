@@ -1,11 +1,12 @@
 extend layout
 block content
     div.container
+        h4 #{errorMessage}
         h3
             | Your shortened URL is: 
             a(href='http://'+base_url+'/'+id) #{base_url}/#{id}
-        h5
-            | The original one was: 
+        h4
+            | The original URL was: 
             a(href=url) #{url}
         br
         h4
