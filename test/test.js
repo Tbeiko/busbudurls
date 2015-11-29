@@ -8,6 +8,7 @@ var expect = require('chai').expect,
     redis = require('redis'),
     client;
 client = redis.createClient();
+
 // Server tasks
 describe('server', function () {
     // Beforehand, start the server
@@ -33,10 +34,10 @@ describe('server', function () {
         });
     });
 
-    // Test submitting a URL
-    describe('Test submitting a URL', function () {
-        it('should return the shortened URL', function (done) {
-            request.post('http://localhost:5000', {from: {url: 'www.google.com'}}, function (error, response, body) {
+    // Test submitting a URL without a custom slug
+    describe('Test submitting a URL without slug', function () {
+        it('should return the shortened URL without slug', function (done) {
+            request.post('http://localhost:5000', {from: {url: 'www.google.com', slug: null}}, function (error, response, body) {
                 expect(body).to.include('Your shortened URL is');
                 expect(response.statusCode).to.equal(200);
                 expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
@@ -45,7 +46,48 @@ describe('server', function () {
         });
     });
 
-    // Test following a URL 
+    // NOT WORKING 
+    // Test submitting a URL with a custom slug -- NOT WORKING
+    describe('Test submitting a URL with slug', function () {
+        it('should return the shortened URL with slug', function (done) {
+            // It seems that the parameters 'url:' and 'slug:' are not being sent through
+            request.post('http://localhost:5000', {from: {url: 'www.google.com', slug: "testslug"}}, function (error, response, body) {
+                expect(body).to.include('testslug');
+                expect(response.statusCode).to.equal(200);
+                expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
+                done();
+            });
+        });
+    });
+
+    // NOT WORKING 
+    // Test submitting a URL with custom slug when slug already used
+    describe('Test submitting a URL with used slug', function () {
+        it('should return the shortened URL without slug', function (done) {
+            client.set('testslug', 'http://www.google.com');
+            // It seems that the parameters 'url:' and 'slug:' are not being sent through
+            request.post('http://localhost:5000', {from: {url: 'www.google.com', slug: "testslug"}}, function (error, response, body) {
+                expect(body).to.include('Oops, a custom URL with that slug already exists.');
+                expect(response.statusCode).to.equal(200);
+                expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
+                done();
+            });
+        });
+    });
+
+    // Test submitting an empty form
+    describe('Test submitting an empty form', function () {
+        it('should return the page without a URL', function (done) {
+            request.post('http://localhost:5000', {from: {url: null, slug: null}}, function (error, response, body) {
+                expect(body).to.include('Oops, it seems you forgot to add a URL. Try again!');
+                expect(response.statusCode).to.equal(200);
+                expect(response.headers['content-type']).to.equal('text/html; charset=utf-8');
+                done();
+            });
+        });
+    });
+
+    // Test following a URL with http://
     describe('Test folling a URL', function () {
         it('should redirect the user to the shortened URL', function(done) {
             // Create the URL 
@@ -63,6 +105,7 @@ describe('server', function () {
         });
     });
 
+    
     // Test non-existent link 
     describe('Test following a non-existent-link', function () {
         it('should return a 404 error', function (done) {
@@ -72,40 +115,9 @@ describe('server', function () {
                 followRedirect: false
             }, function (error, response, body) {
                 expect(response.statusCode).to.equal(404);
-                expect(body).to.include('Link not found');
+                expect(body).to.include("Something went wrong, we couldn't find the link you were looking for.");
                 done();
             });
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

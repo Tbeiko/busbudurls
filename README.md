@@ -28,13 +28,13 @@ If not, the custom slug will become the `id`.
 1. ~~Add option for custom slug~~
   ~~- Will need validations in case slug exists~~
 1. ~~Handle empty URLs~~
+1. Handle non-URL text
   - Could use "url" type input but it requires http://
-1. Rework tests
-  - original tests are passing on localhost, but need to validate with real URLs
-  - create tests for:
+1. Create tests for
     1. http:// or no http://
+      - Need to be able to implement custom slugs in tests to do this
     1. slug, no slug, pre-existant slug
-1. Handle non-URL text (e.g. "Hi, my name is Tim")
+      - **Not working for slugs. Works without but seems to not send any params if the slug is present.**
 1. Require log in
 1. Copy link to clipboard automatically
 1. Show list of currently used slugs

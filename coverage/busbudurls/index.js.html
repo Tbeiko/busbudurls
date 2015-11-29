@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">71.93% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>38/38</span>
+        <span class='fraction'>41/57</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>12/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>4/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">71.93% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>38/38</span>
+        <span class='fraction'>41/57</span>
       </div>
       <div class='fl pad1y'>
         <span class="strong">3 statements, 1 branch</span>
@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -134,7 +134,42 @@
 85
 86
 87
-88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,18 +215,53 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,7 +303,7 @@ app = express();
 port = process.env.PORT || 5000;
 shortid = require('shortid');
 bodyParser = require('body-parser');
-base_url = process.env.BASE_URL || 'http://localhost:5000';
+base_url = process.env.BASE_URL || 'localhost:5000';
 &nbsp;
 // Set up connection to Redis
 /* istanbul ignore if */
@@ -267,19 +337,54 @@ app.get('/', function (req, res) {
 // Define submit route
 app.post('/', function (req, res) {
     // Declare the variables
-    var url, id;
+    var url, id, slug, callback, errorMessage;
 &nbsp;
     // Get URL
     url = req.body.url;
+    slug = req.body.slug;
 &nbsp;
-    // Create a hashed short version 
-    id = shortid.generate();
 &nbsp;
-    // Store them in Redis 
-    client.set(id, url, function () {
-        // Display the response 
-        res.render('output', {id: id, base_url: base_url});
-    });
+    // If there is no 'http://' at the beginning of the URL, it is added
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!(req.body.url)) {
+        errorMessage = "Oops, it seems you forgot to add a URL. Try again!";
+        res.render('output', {base_url: "N", id: "A", url: "N/A", errorMessage: errorMessage});
+    } else <span class="cstat-no" title="statement not covered" >if (req.body.slug) {</span>
+        // If a slug is entered, we check to see whether it is already taken 
+<span class="cstat-no" title="statement not covered" >        client.get(slug, <span class="fstat-no" title="function not covered" >function (err, callback) {</span></span>
+            // If the callback is null, it means no other URL has that slug as id
+<span class="cstat-no" title="statement not covered" >            if (callback == null) { // *** The tests say to use "===" here but it breaks the live app when I do. ***</span>
+                 // Then we can use the slug as id
+<span class="cstat-no" title="statement not covered" >                id = slug;</span>
+                // And then we set it, and render the output page
+<span class="cstat-no" title="statement not covered" >                client.set(id, url, <span class="fstat-no" title="function not covered" >function (err, reply) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    console.log("Successfully created with slug.");</span>
+<span class="cstat-no" title="statement not covered" >                    res.render('output', {id: id, base_url: base_url, url: url});</span>
+                });
+&nbsp;
+            } else {
+                // We generate a new slug
+<span class="cstat-no" title="statement not covered" >                id = shortid.generate();</span>
+                // And then we set it, and render the output page
+<span class="cstat-no" title="statement not covered" >                client.set(id, url, <span class="fstat-no" title="function not covered" >function (err, reply) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    console.log("Slug already taken. Successfully created with shortid");</span>
+<span class="cstat-no" title="statement not covered" >                    errorMessage = "Oops, a custom URL with that slug already exists. We generated a random one for you instead!";</span>
+<span class="cstat-no" title="statement not covered" >                    res.render('output', {id: id, base_url: base_url, url: url, errorMessage: errorMessage});</span>
+                });
+            }
+        });
+    } else {
+        // If no slug was passed, we simply generate an id with shortid
+<span class="cstat-no" title="statement not covered" >        id = shortid.generate();</span>
+<span class="cstat-no" title="statement not covered" >        client.set(id, url, <span class="fstat-no" title="function not covered" >function (err, reply) {</span></span>
+            // Display the response 
+<span class="cstat-no" title="statement not covered" >            console.log("Successfully created with shortid.");</span>
+<span class="cstat-no" title="statement not covered" >            res.render('output', {id: id, base_url: base_url, url: url});</span>
+        });
+    }
 });
 &nbsp;
 // Define link route 
@@ -303,7 +408,7 @@ app.route('/:id').all(function (req, res) {
 });
 &nbsp;
 // Serve static files
-app.use(express.static(__dirname + '/static'));
+app.use(express.static(__dirname + '/public'));
 &nbsp;
 // Listen
 app.listen(port);
@@ -314,7 +419,7 @@ console.log('Listening on port ' + port);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 26 2015 19:12:55 GMT-0500 (EST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 29 2015 16:10:30 GMT-0500 (EST)
 </div>
 </div>
 <script src="../prettify.js"></script>
