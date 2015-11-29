@@ -44,23 +44,48 @@ app.get('/', function (req, res) {
 // Define submit route
 app.post('/', function (req, res) {
     // Declare the variables
-    var url, id;
+    var url, id, slug, callback;
 
-    // Get URL
+    // Get URL and Slug
     url = req.body.url;
+    slug = req.body.slug.trim();
 
+
+    // If there is no 'http://' at the beginning of the URL, it is added
     if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
         url = "http://" + url;
     }
 
-    // Create a hashed short version 
-    id = shortid.generate();
-
-    // Store them in Redis 
-    client.set(id, url, function () {
-        // Display the response 
-        res.render('output', {id: id, base_url: base_url, url: url});
-    });
+    // If a slug is entered, we check to see whether it is already taken
+    if (req.body.slug) {
+            client.get(slug, function (err, callback) {
+                // If the callback is not null, it means that another URL already has that slug associated with it
+                if (callback != null) {
+                    // So we generate a new slug
+                    id = shortid.generate();
+                    // And then we set it, and render the output page
+                    client.set(id, url, function (err, reply) {
+                        console.log("Slug already taken. Successfully created with shortid");
+                        res.render('output', {id: id, base_url: base_url, url: url});
+                    });
+                } else {
+                    // If the callback is null, then we can use the slug as id
+                    id = slug;
+                    client.set(id, url, function (err, reply) {
+                        console.log("Successfully created with slug.");
+                        res.render('output', {id: id, base_url: base_url, url: url});
+                    });
+                }
+            });
+    } else {
+        // If no slug was passed, we simply generate an id with shortid
+        id = shortid.generate();
+        client.set(id, url, function (err, reply) {
+            // Display the response 
+            console.log("Successfully created with shortid.");
+            res.render('output', {id: id, base_url: base_url, url: url, error: error});
+        });
+    };
 });
 
 // Define link route 
