@@ -10,6 +10,11 @@ h1, h2, h3, h4, h5, p  {
   vertical-align: middle;
 }
 
+.main-header:hover {
+  color:white;
+  text-decoration: none;
+}
+
 .container {
   margin-right: 5%;
 }
