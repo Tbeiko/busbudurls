@@ -7,16 +7,19 @@
   - ~~add bootstrap~~
   - mobile responsive
   - help text under proper box
-  - style it 
+  - ~~style it~~ 
 1. ~~Add custom (short) domain~~
   - ~~`heroku config:set BASE_URL="shortdoma.in"`~~
   - ~~Make it work without www~~
 1. ~~Update form to not require `"http://"` at beginning of link~~
 1. ~~Add option for custom slug~~
   ~~- Will need validations in case slug exists~~
-1. Handle empty URLs
-1. Validate for bad links 
-  - test is passing on localhost, but need to validate with real URLs
+1. ~~Handle empty URLs~~
+1. Rework tests
+  - original tests are passing on localhost, but need to validate with real URLs
+  - create tests for:
+    1. http:// or no http://
+    1. slug, no slug, pre-existant slug
 1. Require log in?
 1. Copy link to clipboard automatically
 1. Show list of currently used slugs
