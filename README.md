@@ -18,9 +18,9 @@ If not, the custom slug will become the `id`.
 ### TODO
 1. Make it look somewhat decent
   - ~~add bootstrap~~
-  - mobile responsive
+  - ~~mobile responsive~~
   - help text under proper box
-  - ~~style it~~ 
+  - ~~style it (kind of)~~ 
 1. ~~Add custom (short) domain~~
   - ~~`heroku config:set BASE_URL="shortdoma.in"`~~
   - ~~Make it work without www~~
@@ -28,6 +28,7 @@ If not, the custom slug will become the `id`.
 1. ~~Add option for custom slug~~
   ~~- Will need validations in case slug exists~~
 1. ~~Handle empty URLs~~
+  - Could use "url" type input but it requires http://
 1. Rework tests
   - original tests are passing on localhost, but need to validate with real URLs
   - create tests for:
