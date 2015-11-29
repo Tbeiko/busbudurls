@@ -5,6 +5,8 @@
 This is my first project using NodeJS and Redis. 
 It is a simple URL shortener for Busbud. 
 
+The core of this was built with the help of Matthew Daly's tutorial, which can be found at [busb.co/tutorial](http://busb.co/tutorial)
+
 Users can pass in a URL and an optional slug. 
 A key-value Redis element will then be created using the shortened URL `id` as key and the `url` as value.
 If `url` does not begin with either "ftp://", "ftps://", "http://" or "https://", "http://" will be added at its beginning.
@@ -32,6 +34,6 @@ If not, the custom slug will become the `id`.
     1. http:// or no http://
     1. slug, no slug, pre-existant slug
 1. Handle non-URL text (e.g. "Hi, my name is Tim")
-1. Require log in?
+1. Require log in
 1. Copy link to clipboard automatically
 1. Show list of currently used slugs
