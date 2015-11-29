@@ -31,10 +31,12 @@ h1, h2, h3, h4, h5, p  {
 }
 
 .linkbox {
-  max-width: 90%;
+  max-width: 95%;
   display: inline-block;
-  height: 40px;
-  font-size: 25px;
+  height: 35px;
+  font-size: 20px;
+  vertical-align: middle;
+  line-height: 35px;
 }
 
 
@@ -42,4 +44,13 @@ h1, h2, h3, h4, h5, p  {
   height: 40px;
   font-size: 18px;
   background-color: #127ccb;
+}
+
+@media (min-width: 500px) {
+  .linkbox {
+    max-width: none;
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+  }
 }
