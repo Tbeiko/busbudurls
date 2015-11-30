@@ -5,6 +5,8 @@
 This is my first project using NodeJS and Redis. 
 It is a simple URL shortener for Busbud. 
 
+It runs on Heroku and uses Redis To Go.
+
 The core of this was built with the help of Matthew Daly's tutorial, which can be found at [busb.co/tutorial](http://busb.co/tutorial)
 
 Users can pass in a URL and an optional slug. 
